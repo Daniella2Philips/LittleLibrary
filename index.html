@@ -6,7 +6,7 @@
     <title>Little Library</title>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header section with title and search -->
     <header>
         <table width="100%">
             <tr>
@@ -14,7 +14,7 @@
                     <h1>Little Library</h1>
                 </td>
                 <td align="right">
-                    <input type="text" placeholder="Search books..." size="30">
+                    <input type="text" id="searchInput" placeholder="Search books..." size="30">
                     <button type="button">Logout</button>
                 </td>
             </tr>
@@ -23,72 +23,40 @@
 
     <hr>
 
-    <!-- Main Content -->
+    <!-- Main content area -->
     <main>
-        <!-- Add Book Section -->
+        <!-- Button to add new books -->
         <center>
             <h2>Manage Your Library</h2>
-            <button type="button">Add New Book</button>
+            <button type="button" onclick="window.location.href='addBook.html'">Add New Book</button>
         </center>
 
         <br><br>
-
-       
-
         <br><br>
 
-        <!-- Bookshelf Section -->
+        <!-- Bookshelf display area -->
         <div>
             <h3>Your Library</h3>
             <hr>
             <center>
+                <!-- Empty library message (hidden when books exist) -->
                 <h4>Your library is empty</h4>
                 <p>Add your first book to get started!</p>
                 
-                <!-- 3-Shelf Library -->
-                <table border="1">
-                    <!-- Top Shelf -->
-                    <tr>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                    </tr>
-                    <!-- Middle Shelf -->
-                    <tr>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                    </tr>
-                    <!-- Bottom Shelf -->
-                    <tr>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                        <td width="60" height="80" align="center">📖</td>
-                    </tr>
-                </table>
+                <!-- Dynamic bookshelf table (populated by JavaScript) -->
+                <div id="bookshelf-container">
+                    <table border="1" id="bookshelf-table">
+                        <!-- Books will be added here by JavaScript -->
+                    </table>
+                </div>
             </center>
         </div>
-              
-
     </main>
 
     <br><br>
     <hr>
+
+    <!-- Footer -->
     <footer>
         <center>
             <small>Little Library - Your Personal Book Collection</small>
@@ -105,10 +73,9 @@
             <small>Made with ❤️ for book lovers everywhere</small>
         </center>
     </footer>
+
+    <!-- JavaScript files - load in order: shared functions first, then page-specific -->
+    <script src="library.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
-        `
-      }} />
-    </div>
-  );
-}
